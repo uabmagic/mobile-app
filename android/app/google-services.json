@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "533317195826",
+    "project_id": "uab-magic",
+    "storage_bucket": "uab-magic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533317195826:android:b9a7e15ef89d35d0ce042b",
+        "android_client_info": {
+          "package_name": "com.uabmagic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533317195826-7eqs0h9mq357gjst7m9lhtuhrhcu5ou3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDky-Pt5FuabkYdRhOMIKYg4WAaPdYvBbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533317195826-7eqs0h9mq357gjst7m9lhtuhrhcu5ou3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
