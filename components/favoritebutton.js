@@ -75,26 +75,15 @@ const FavoriteButton = props => {
 };
 
 const styles = StyleSheet.create({
-  button: {
-    alignItems: 'center',
-    alignSelf: 'flex-end',
-    elevation: 3,
-    height: 44,
-    justifyContent: 'center',
-    width: 44,
-  },
   darkIcon: {
     color: Constants.colors.red,
   },
   icon: {
-    fontSize: 22,
-
     alignItems: 'center',
     alignSelf: 'flex-end',
     elevation: 3,
-    height: 44,
+    fontSize: 22,
     justifyContent: 'center',
-    width: 44,
   },
   lightIcon: {
     color: Constants.colors.white,

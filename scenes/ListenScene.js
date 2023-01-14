@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
-import {Dimensions, Image, ImageBackground, View, Text} from 'react-native';
-import TrackPlayer, {Capability, State} from 'react-native-track-player';
+import {
+  Dimensions,
+  Image,
+  ImageBackground,
+  Pressable,
+  View,
+  Text,
+} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import TrackPlayer, {Capability, State} from 'react-native-track-player';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import * as ApiService from '../services/apiservice';
 import UserService from '../services/userservice';
@@ -110,7 +118,7 @@ export default class ListenScene extends Component {
     );
 
     const authInfo =
-      authInfoFromStorage != null ? JSON.parse(authInfoFromStorage) : null;
+      authInfoFromStorage != null ? JSON.parse(authInfoFromStorage) : {};
 
     const userId = authInfo.userId || 0;
     const sid = authInfo.sid || '';
@@ -123,10 +131,10 @@ export default class ListenScene extends Component {
   };
 
   toggle = async () => {
-    var playState = await TrackPlayer.getState();
+    let playState = await TrackPlayer.getState();
     const currentTrack = await TrackPlayer.getCurrentTrack();
 
-    var track = {
+    const track = {
       id: Constants.streamTrackId,
       url: Constants.streamUrls.hq,
       title: this.state.data.attractionAndSong,
@@ -218,6 +226,12 @@ export default class ListenScene extends Component {
             <IconButton onPress={this.toggle} icon={this.state.iconName} />
             <View style={styles.playback}>
               <UpNextButton upNext={nowPlaying.upNext} />
+              <Pressable style={styles.button} onPress={this.refresh}>
+                <MaterialCommunityIcons
+                  style={styles.icon}
+                  name={Constants.icons.refresh}
+                />
+              </Pressable>
               <FavoriteButton isFavorite={nowPlaying.isFavorite} />
             </View>
           </View>
@@ -246,6 +260,10 @@ const styles = {
   container: {
     flex: 1,
   },
+  icon: {
+    color: Constants.colors.white,
+    fontSize: 22,
+  },
   image: {
     height: Dimensions.get('window').width * 0.6,
     width: Dimensions.get('window').width * 0.6,
@@ -263,6 +281,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginTop: 32,
     width: Dimensions.get('window').width * 0.9,
   },
   playbackText: {

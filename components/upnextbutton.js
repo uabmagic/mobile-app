@@ -43,9 +43,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     elevation: 3,
-    height: 44,
     justifyContent: 'center',
-    width: 44,
   },
   icon: {
     color: Constants.colors.white,

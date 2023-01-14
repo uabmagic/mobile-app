@@ -29,6 +29,7 @@ export const icons = {
   play: 'play',
   playlistMusic: 'playlist-music',
   playlistPlus: 'playlist-plus',
+  refresh: 'refresh',
 };
 
 // Misc.
@@ -41,6 +42,7 @@ export const settings = {
     authInfo: '@authInfo',
     favorites: '@favorites',
     requestedSongs: '@requestedSongs',
+    password: '@password',
     username: '@username',
   },
 };
